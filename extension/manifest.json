@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Trusted Types Propagator POC",
+    "version": "1.0",
+    "description": "POC for the thesis that propagates Trusted Types policies into src-less iframes.",
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "lib/purify.min.js",                
+                "protezione.js"
+            ],
+            "run_at": "document_start",
+            "world": "MAIN",          
+            "all_frames": true
+        }
+    ]
+}
